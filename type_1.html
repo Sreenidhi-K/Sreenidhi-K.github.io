@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> type time </title> 
+    <link rel="stylesheet" type="text/css" href="type_3.css">
+</head>
+    
+<body id="bb">
+    <h1> Type Time !!</h1>
+    <p style=" text-align: center;
+    font-size: 20px;
+    letter-spacing: 10px;font-size:"> FIND OUT YOUR TYPING SPEED</p>
+    <div id="text">
+    
+        
+    </div>
+     <p id="timer"> </p>
+    <button id="start" type="button" onclick="timedText()"> START </button>
+     <button id="reset" type="reset" onClick="window.location.reload()"> RESET </button>
+    
+    <div id="box">
+    <textarea type="text" id="enter"></textarea>
+        <br>
+        
+    </div>
+    <script>
+    var x=1;
+        var pool;
+function timedText() {
+	
+    pool= setInterval(myTimeout1, 1000) ;
+    
+}
+function myTimeout1() {
+    document.getElementById("timer").innerHTML = (x++)+" seconds";
+    var fill=document.getElementById("enter");
+        var data=fill.value;
+        var es=document.getElementById("essay");
+        var st=es.textContent;
+    if(st.length==data.length)
+        {
+           var count=1; 
+        clearInterval(pool);
+            for(j=0;j<st.length;j++)
+                if(st[j]==' ')
+                    count++;
+         var fit= document.getElementById("box");
+                        var suc=document.createElement("p");
+                        suc.textContent="Words per minute :"+((count*60)/x);
+                        fit.appendChild(suc);
+        
+        }
+        
+}
+    </script>
+    
+    <script src="type_2.js"></script>
+    
+</body>
+</html>
